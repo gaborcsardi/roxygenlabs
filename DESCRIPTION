@@ -15,4 +15,4 @@ Suggests:
     covr,
     testthat
 Encoding: UTF-8
-Roxygen: { library(roxygenlabs); list(markdown = TRUE, roclets = c("collate", "namespace", "themed_rd")) }
+Roxygen: { library(roxygenlabs); list(markdown = TRUE, roclets = c("collate", "namespace", "roxygenlabs_rd")) }

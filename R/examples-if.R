@@ -1,4 +1,10 @@
 
+#' Conditional examples
+#'
+#' @includeRmd man/chunks/examplesIf.Rmd
+#' @name examplesIf
+NULL
+
 #' @importFrom roxygen2 roxy_tag_parse tag_examples
 #' @export
 

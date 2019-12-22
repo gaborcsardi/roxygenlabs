@@ -1,0 +1,19 @@
+
+The `@examplesIf` tag implements conditional examples, that do not run
+when running `example()` and `R CMD check`, unless some condition holds.
+You can use this mechanism to avoid running some examples on CRAN and/or
+during `R CMD check`, without adding boilerplate code to the examples
+themselves. The following example only runs if the computer is online:
+
+```
+#' @examplesIf curl::has_internet()
+#' curl::curl_fetch_memory("https://httpbin.org/status/200")
+```
+
+If you never want to run an example, use `FALSE` as the condition. This
+makes sense for examples that take a very long time to run:
+
+```
+#' @examplesIf FALSE
+#' some very long running computation...
+```

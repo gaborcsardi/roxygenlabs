@@ -1,13 +1,13 @@
 
-foo <- function(arg, ...) UseMethod("foo")
-
-#' @export
-
-foo.bar <- function(...) print("foo.bar")
-
 roxy_themes <- new.env(parent = emptyenv())
 
-#' @importFrom roxygen2 roxy_tag_parse roxy_meta_get
+#' Theme R manual pages with roxygen2
+#'
+#' @includeRmd man/chunks/theme.Rmd
+#' @name theme
+NULL
+
+#' @importFrom roxygen2 roxy_tag_parse
 #' @export
 
 roxy_tag_parse.roxy_tag_theme <- function(x) {
@@ -19,33 +19,6 @@ roxy_tag_parse.roxy_tag_theme <- function(x) {
   })
   roxy_themes[[roxy_meta_get("package")]] <- theme_files
   NULL
-}
-
-#' Theme R manual pages with roxygen2
-#'
-#' This roclet allows adding CSS and JS files to the HTML version of the
-#' manual pages.
-#'
-#' To use this roclet, you need to add this to `DESCRIPTION`:
-#'
-#' ```
-#' Roxygen: { library(roxygenlabs); list(markdown = TRUE,
-#'     roclets = c("collate", "namespace", "themed_rd")) }
-#' ```
-#'
-#' and then use the `@theme` tag to add CSS/JS files to _all_ manual pages.
-#' Multiple file names can be specicified in a single `@theme` tag, and
-#' file names are relative to the `inst/doc` directory, within the package.
-#'
-#' @param test This is a test.
-#'
-#' @return Roxygen roclet.
-#'
-#' @importFrom roxygen2 roclet
-#' @export
-
-themed_rd <- function(test) {
-  roclet(c("themed_rd", "rd"))
 }
 
 #' @importFrom roxygen2 roclet_output
