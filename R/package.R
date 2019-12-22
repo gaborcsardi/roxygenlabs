@@ -1,4 +1,5 @@
 
-#' Experimental 'roxygen' Tags and Extensions
+#' Experimental 'roxygen' tags and extensions
 #'
+#' @theme assets/extra.css assets/rd.js
 "_PACKAGE"

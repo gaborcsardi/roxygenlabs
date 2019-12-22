@@ -4,9 +4,13 @@
 \name{roxygenlabs-package}
 \alias{roxygenlabs}
 \alias{roxygenlabs-package}
-\title{Experimental 'roxygen' Tags and Extensions}
+\title{Experimental 'roxygen' tags and extensions}
 \description{
 Experimental 'roxygen' tags and extensions.
+
+\if{html}{\out{<link rel="stylesheet" type="text/css" href="../doc/assets/extra.css">}}
+
+\if{html}{\out{<script src="../doc/assets/rd.js"></script>}}
 }
 \seealso{
 Useful links:
