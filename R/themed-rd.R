@@ -21,14 +21,6 @@ roxy_tag_parse.roxy_tag_theme <- function(x) {
   NULL
 }
 
-#' @importFrom roxygen2 roclet_output
-#' @export
-
-roclet_output.roclet_themed_rd <- function(x, results, base_path, ...) {
-  results <- lapply_with_names(results, add_styles)
-  NextMethod()
-}
-
 `%||%` <- function(l, r) if (is.null(l)) r else l
 
 lapply_with_names <- function(X, FUN, ...) {

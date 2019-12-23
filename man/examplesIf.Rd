@@ -23,4 +23,9 @@ If you never want to run an example, use \code{FALSE} as the condition. This
 makes sense for examples that take a very long time to run:\preformatted{#' @examplesIf FALSE
 #' some very long running computation...
 }
+
+To support \verb{@examplesIf} in R6 classes you need to use the
+\code{roxygenlabs_rd} roclet. E.g. add this to \code{DESCRIPTION}:\preformatted{Roxygen: \{ library(roxygenlabs); list(markdown = TRUE,
+    roclets = c("collate", "namespace", "roxygenlabs_rd")) \}
+}
 }

@@ -49,6 +49,12 @@ makes sense for examples that take a very long time to run:
     #' @examplesIf FALSE
     #' some very long running computation...
 
+To support `@examplesIf` in R6 classes you need to use the
+`roxygenlabs_rd` roclet. E.g. add this to `DESCRIPTION`:
+
+    Roxygen: { library(roxygenlabs); list(markdown = TRUE,
+        roclets = c("collate", "namespace", "roxygenlabs_rd")) }
+
 ### CSS and Javascript themes
 
 The `@theme` tag allows adding CSS and JS files to the HTML version of
