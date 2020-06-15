@@ -27,7 +27,7 @@ roclet_process.roclet_roxygenlabs_rd <- function(x, blocks, env, base_path) {
 #' @export
 
 roclet_output.roclet_roxygenlabs_rd <- function(x, results, base_path, ...) {
-  pkg <- roxy_meta_get("package")
+  pkg <- roxy_meta_get("current_package")
   if (!is.null(pkg) && !is.null(roxy_themes[[pkg]])) {
     results <- lapply_with_names(results, add_styles)
   }

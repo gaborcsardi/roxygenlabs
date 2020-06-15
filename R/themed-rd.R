@@ -17,7 +17,7 @@ roxy_tag_parse.roxy_tag_theme <- function(x) {
       roxy_warning("Roxygen theme file does not exist: '", f, "'")
     }
   })
-  roxy_themes[[roxy_meta_get("package")]] <- theme_files
+  roxy_themes[[roxy_meta_get("current_package")]] <- theme_files
   NULL
 }
 
@@ -40,7 +40,7 @@ add_styles <- function(page) {
 #' @importFrom roxygen2 roxy_meta_get
 
 style_man <- function() {
-  pkg <- roxy_meta_get("package")
+  pkg <- roxy_meta_get("current_package")
   theme_files <- roxy_themes[[pkg]]
   if (length(theme_files) == 0) {
     roxy_warning("No @theme tags for 'theme_rg' roclet")
