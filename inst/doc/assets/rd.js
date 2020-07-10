@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if (prev.innerText == "Examples") { x.className += " r"; }
   });
 
-  document.querySelectorAll('div.r pre, pre.r').forEach((block) => {
+  document.querySelectorAll(
+    'div.r pre, pre.r, h3:nth-of-type(2) + pre').forEach((block) => {
     block.id = "rdpre" + rd_pre_id;
     rd_pre_id ++;
     block.class = "r";
